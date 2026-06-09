@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "author": "Equipe Docking & Retrieval",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 100, "left": 20, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servoBraco",
+      "top": -60,
+      "left": 280,
+      "attrs": { "hornColor": "white" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servoGarra",
+      "top": 120,
+      "left": 280,
+      "attrs": { "hornColor": "white" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledStatus",
+      "top": 300,
+      "left": 60,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 320,
+      "left": 130,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-vcc",
+      "id": "fonte5v",
+      "top": -80,
+      "left": 500,
+      "attrs": {}
+    },
+    { "type": "wokwi-gnd", "id": "gndFonte", "top": 60, "left": 520, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:9", "servoBraco:PWM", "orange", [ "h0" ] ],
+    [ "uno:10", "servoGarra:PWM", "orange", [ "h0" ] ],
+    [ "fonte5v:VCC", "servoBraco:V+", "red", [ "v0" ] ],
+    [ "fonte5v:VCC", "servoGarra:V+", "red", [ "v0" ] ],
+    [ "gndFonte:GND", "servoBraco:GND", "black", [ "v0" ] ],
+    [ "gndFonte:GND", "servoGarra:GND", "black", [ "v0" ] ],
+    [ "uno:GND.1", "gndFonte:GND", "black", [ "v0" ] ],
+    [ "uno:13", "r1:1", "green", [ "h0" ] ],
+    [ "r1:2", "ledStatus:A", "green", [ "h0" ] ],
+    [ "ledStatus:C", "uno:GND.2", "black", [ "v0" ] ]
+  ]
+}
