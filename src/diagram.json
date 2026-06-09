@@ -31,24 +31,15 @@
       "top": 320,
       "left": 130,
       "attrs": { "value": "220" }
-    },
-    {
-      "type": "wokwi-vcc",
-      "id": "fonte5v",
-      "top": -80,
-      "left": 500,
-      "attrs": {}
-    },
-    { "type": "wokwi-gnd", "id": "gndFonte", "top": 60, "left": 520, "attrs": {} }
+    }
   ],
   "connections": [
     [ "uno:9", "servoBraco:PWM", "orange", [ "h0" ] ],
     [ "uno:10", "servoGarra:PWM", "orange", [ "h0" ] ],
-    [ "fonte5v:VCC", "servoBraco:V+", "red", [ "v0" ] ],
-    [ "fonte5v:VCC", "servoGarra:V+", "red", [ "v0" ] ],
-    [ "gndFonte:GND", "servoBraco:GND", "black", [ "v0" ] ],
-    [ "gndFonte:GND", "servoGarra:GND", "black", [ "v0" ] ],
-    [ "uno:GND.1", "gndFonte:GND", "black", [ "v0" ] ],
+    [ "uno:5V", "servoBraco:V+", "red", [ "v0" ] ],
+    [ "uno:5V", "servoGarra:V+", "red", [ "v0" ] ],
+    [ "uno:GND.1", "servoBraco:GND", "black", [ "v0" ] ],
+    [ "uno:GND.3", "servoGarra:GND", "black", [ "v0" ] ],
     [ "uno:13", "r1:1", "green", [ "h0" ] ],
     [ "r1:2", "ledStatus:A", "green", [ "h0" ] ],
     [ "ledStatus:C", "uno:GND.2", "black", [ "v0" ] ]
