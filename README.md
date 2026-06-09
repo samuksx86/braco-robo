@@ -89,8 +89,8 @@ num_dentes       = 5;   // Dentes de retenção
 
 ### Modelo 3D da garra
 
-![Modelo 3D da garra](images/modelo_3d_garra.png)
+![Modelo 3D da garra](/images/modelo_3d_pecas.png)
 
 ### Circuito simulado
 
-![Circuito no Wokwi](images/wooki_1.png)
+![Circuito no Wokwi](images/wokwi.png)
