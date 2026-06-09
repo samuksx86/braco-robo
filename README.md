@@ -4,19 +4,13 @@ Projeto de braço robótico para **manipulação de carga em ambientes de microg
 
 ## 👥 Integrantes
 
-| Nome completo | 
-|---|
-| [Integrante 1] |
-| [Integrante 2] |
-| [Integrante 3] |
-| [Integrante 4] |
-| [Integrante 5] |
+| Nome completo                     |
+| --------------------------------- |
+| Samuel Ramos de Almeida - RM99134 |
 
 ## 🔗 Acesso ao Simulador
 
-**Link público do projeto (Wokwi):** [COLE AQUI O LINK PÚBLICO DO SEU PROJETO]
-
-> ⚠️ O link deve estar em modo público. Para isso, no Wokwi clique em **Save** e depois em **Share** → copie o link gerado.
+**Link público do projeto (Wokwi):** [[LINK DO PROJETO](https://wokwi.com/projects/466386470549992449)]
 
 ## 🎮 Guia de Operação
 
@@ -25,12 +19,12 @@ Projeto de braço robótico para **manipulação de carga em ambientes de microg
 3. Confirme que a velocidade está em **9600 baud**.
 4. Digite um dos comandos abaixo e pressione **Enter**:
 
-| Comando | Ação | Servo acionado |
-|:---:|---|---|
-| `U` | **Up** — Sobe o braço (150°) | Servo 1 (pino 9) |
-| `D` | **Down** — Desce o braço até a amostra (30°) | Servo 1 (pino 9) |
-| `O` | **Open** — Abre a garra (90°) | Servo 2 (pino 10) |
-| `C` | **Close** — Fecha a garra e captura a amostra (10°) | Servo 2 (pino 10) |
+| Comando | Ação                                                | Servo acionado    |
+| :-----: | --------------------------------------------------- | ----------------- |
+|   `U`   | **Up** — Sobe o braço (150°)                        | Servo 1 (pino 9)  |
+|   `D`   | **Down** — Desce o braço até a amostra (30°)        | Servo 1 (pino 9)  |
+|   `O`   | **Open** — Abre a garra (90°)                       | Servo 2 (pino 10) |
+|   `C`   | **Close** — Fecha a garra e captura a amostra (10°) | Servo 2 (pino 10) |
 
 **Sequência típica de coleta:** `O` → `D` → `C` → `U` (abre a garra, desce, captura e sobe com a amostra).
 
@@ -39,20 +33,22 @@ O **LED de status** (pino 13) permanece **aceso** quando o sistema está pronto 
 ## ⚙️ Especificações Técnicas
 
 ### Alimentação
+
 - **Fonte de bancada configurada em 5V** (faixa segura para servos SG90: 4,8V–6V), alimentando exclusivamente os servomotores.
 - O Arduino Uno é alimentado via USB no simulador.
 - **GND comum** entre a fonte de bancada e o Arduino (obrigatório para o sinal PWM funcionar).
 
 ### Pinagem do Arduino Uno
 
-| Pino | Componente | Função |
-|:---:|---|---|
-| D9 (PWM) | Servo 1 — Articulação do braço | Sinal de controle |
-| D10 (PWM) | Servo 2 — Garra | Sinal de controle |
-| D13 | LED de status (com resistor de 220 Ω) | Indicação de funcionamento |
-| GND | Fonte de bancada + LED | Referência comum |
+|   Pino    | Componente                            | Função                     |
+| :-------: | ------------------------------------- | -------------------------- |
+| D9 (PWM)  | Servo 1 — Articulação do braço        | Sinal de controle          |
+| D10 (PWM) | Servo 2 — Garra                       | Sinal de controle          |
+|    D13    | LED de status (com resistor de 220 Ω) | Indicação de funcionamento |
+|    GND    | Fonte de bancada + LED                | Referência comum           |
 
 ### Firmware
+
 - Comunicação serial a **9600 baud**.
 - Movimentos **suaves (grau a grau, 15 ms por passo)**, evitando trancos que deslocariam a carga em microgravidade.
 
@@ -62,6 +58,7 @@ O **LED de status** (pino 13) permanece **aceso** quando o sistema está pronto 
 - **Peça desenvolvida:** Garra (grip) de captura com encaixe para servo 9g (SG90).
 
 ### Características do design
+
 - **Rebaixo de encaixe** com as dimensões exatas do servo SG90 (23,2 × 12,5 mm) e furos para parafusos M2;
 - **Dentes de retenção** na face interna dos dedos e **ganchos na ponta**, impedindo que a amostra escape ao flutuar em microgravidade;
 - **Totalmente paramétrico:** todas as dimensões (comprimento dos dedos, abertura da garra, espessura, número de dentes) são variáveis ajustáveis no início do arquivo `garra.scad`.
@@ -91,7 +88,9 @@ num_dentes       = 5;   // Dentes de retenção
 ## 🖼️ Imagens
 
 ### Modelo 3D da garra
+
 ![Modelo 3D da garra](images/modelo_3d_garra.png)
 
 ### Circuito simulado
-![Circuito no Wokwi](images/circuito_wokwi.png)
+
+![Circuito no Wokwi](images/wooki_1.png)
